@@ -79,3 +79,4 @@ typings/
 .next
 
 database/config/config.json
+database/migrations/Create_migration_estruture.js
