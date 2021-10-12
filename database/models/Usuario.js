@@ -10,7 +10,26 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'usuarios',
       timestamps: false
     }
-  )
+  );
 
-  return u
+  u.associate = (models) => {
+    // associando usuarios com contatos
+    u.hasMany(models.Contato, { as: 'contatos', foreignKey: 'usuarios_id' });
+
+    // Associando um usuario com outros usuarios(amizade) (muitos para muitos)
+    u.belongsToMany(
+      models.Usuario,
+      {
+        as: 'colegas', // nome do relacionamento
+        through: 'amizades', // nome da tabela intermediaria
+        foreignKey: 'usuarios1_id',
+        otherKey: 'usuarios2_id',
+        timestamps: false
+      }
+
+    )
+
+  }
+
+  return u;
 }
