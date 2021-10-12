@@ -80,3 +80,4 @@ typings/
 
 database/config/config.json
 database/migrations/Create_migration_estruture.js
+database/seeders/Create_seeders_estruture.js
