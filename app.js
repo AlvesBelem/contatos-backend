@@ -14,5 +14,5 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', AuthRouter);
-app.use('/',ContatosController)
+app.use('/', ContatosRouter)
 module.exports = app;
